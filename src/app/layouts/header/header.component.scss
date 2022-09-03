@@ -8,6 +8,7 @@ header {
     var(--color-primary-light)
   );
 
+  box-shadow: 0 2px 25px rgba($color: #2b00ff, $alpha: 0.3);
   position: sticky;
   height: 60px;
   display: flex;

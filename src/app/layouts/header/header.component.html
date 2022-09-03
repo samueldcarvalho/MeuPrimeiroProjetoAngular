@@ -1,13 +1,17 @@
 <header class="container-fluid">
   <div class="container">
-    <h1>Store</h1>
+    <a [routerLink]="['/home']">
+      <h1>MinhaStore</h1>
+    </a>
     <nav>
       <ul class="menu-links">
-        <li><a href="" class="menu-button">Products</a></li>
-        <li><a href="" class="menu-button">About</a></li>
-        <li><a href="" class="menu-button">Features</a></li>
+        <li><a [routerLink]="['/home']" class="menu-button">Products</a></li>
+        <li><a [routerLink]="['/about']" class="menu-button">About</a></li>
+        <li><a [routerLink]="['/feature']" class="menu-button">Features</a></li>
       </ul>
     </nav>
-    <a class="menu-contact"><button>Contact</button></a>
+    <a [routerLink]="['/contact']" class="menu-contact"
+      ><button>Contact</button></a
+    >
   </div>
 </header>
