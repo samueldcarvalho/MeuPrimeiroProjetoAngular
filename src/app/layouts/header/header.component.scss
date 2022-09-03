@@ -3,7 +3,10 @@ header * {
 }
 
 header {
-  background-color: var(--color-primary-main);
+  background: linear-gradient(
+    var(--color-primary-main),
+    var(--color-primary-light)
+  );
 
   position: sticky;
   height: 60px;
@@ -26,6 +29,32 @@ header {
       li {
         display: inline-block;
         padding: 0 16px;
+
+        a {
+          transition: all 0.3 ease 0s;
+        }
+
+        a:hover {
+          color: var(--color-03-main);
+        }
+      }
+    }
+
+    .menu-contact {
+      button {
+        background-color: transparent;
+        border-radius: 12px;
+        padding: 7px 25px;
+        border: solid 1px #fff;
+        transition: all 0.1s ease;
+      }
+
+      button:hover {
+        background-color: #fff;
+        color: var(--color-03-main);
+        border-radius: 14px;
+        box-shadow: 0 5px 15px rgba($color: #000000, $alpha: 0.4);
+        cursor: pointer;
       }
     }
   }
