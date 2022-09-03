@@ -9,6 +9,10 @@
   --color-secondary-light: #4473ff;
   --color-secondary-darker: #1543cb;
 
+  --color-03-main: #ff8c04;
+  --color-03-light: #ffb12b;
+  --color-03-darker: #da5e00;
+
   --bg-01: #f0f5fc;
   --bg-02: #ffffff;
 }
@@ -18,4 +22,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #fff;
+}
+
+li,
+a,
+button {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
 }
