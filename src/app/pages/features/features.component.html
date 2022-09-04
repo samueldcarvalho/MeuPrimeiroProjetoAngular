@@ -1,10 +1,10 @@
 <section class="container">
-  <h2>InterpolationBinding</h2>
+  <h2>InterpolationBinding (One-Way)</h2>
   <p>O Número de clicks é {{ contadorClicks }}</p>
 
   <br />
 
-  <h2>PropertyBinding + EventBinding</h2>
+  <h2>PropertyBinding + EventBinding (One-Way)</h2>
   <button
     class="btn-main-action"
     [disabled]="contadorClicks >= 10"
@@ -19,4 +19,41 @@
   >
     Zerar Contador
   </button>
+
+  <br />
+  <br />
+
+  <h2>Fake TwoWayBinding</h2>
+  <input
+    class="input-text-field"
+    type="text"
+    (keyup)="AlterarNome($event)"
+    placeholder="Digite seu nome"
+  />
+  <p>Seu nome é: {{ nome }}</p>
+
+  <br />
+  <br />
+
+  <h2>TwoWayBinding</h2>
+  <input
+    class="input-text-field"
+    type="text"
+    [ngModel]="nome"
+    (ngModelChange)="nome = $event"
+    placeholder="Digite seu nome"
+  />
+  <p>Seu nome é: {{ nome }}</p>
+
+  <br />
+  <br />
+
+  <h2>Official - TwoWayBinding</h2>
+  <input
+    class="input-text-field"
+    type="text"
+    [(ngModel)]="nome"
+    placeholder="Digite seu nome"
+  />
+  <p>Seu nome é: {{ nome }}</p>
 </section>

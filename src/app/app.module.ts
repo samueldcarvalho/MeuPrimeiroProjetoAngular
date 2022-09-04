@@ -9,7 +9,8 @@ import { ContactComponent } from "./pages/contact/contact.component";
 import { AboutComponent } from "./pages/about/about.component";
 import { RouterModule } from "@angular/router";
 import { APP_BASE_HREF } from "@angular/common";
-import { FeaturesComponent } from './pages/features/features.component';
+import { FeaturesComponent } from "./pages/features/features.component";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FeaturesComponent } from './pages/features/features.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: "/" }],

@@ -7,6 +7,7 @@ import { Component, OnInit } from "@angular/core";
 })
 export class FeaturesComponent {
   public contadorClicks: number = 0;
+  public nome: string = "";
 
   AdicionarClick() {
     this.contadorClicks++;
@@ -14,5 +15,9 @@ export class FeaturesComponent {
 
   ZerarClicks() {
     this.contadorClicks = 0;
+  }
+
+  AlterarNome(event: any) {
+    this.nome = event.target.value;
   }
 }

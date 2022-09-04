@@ -23,6 +23,7 @@
   padding: 0;
   box-sizing: border-box;
   color: #fff;
+  outline: none;
 }
 
 body {
@@ -55,4 +56,12 @@ button.btn-main-action:disabled {
   background-color: var(--color-primary-darker);
   color: #dddddd;
   cursor: default;
+}
+
+.input-text-field {
+  background-color: var(--bg-01);
+  border: 1px solid black;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 14px;
 }
