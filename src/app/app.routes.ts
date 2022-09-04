@@ -1,3 +1,4 @@
+import { FeaturesComponent } from "./pages/features/features.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { Routes } from "@angular/router";
 import { AboutComponent } from "./pages/about/about.component";
@@ -8,4 +9,5 @@ export const rootRouterConfig: Routes = [
   { path: "home", component: HomeComponent },
   { path: "about", component: AboutComponent },
   { path: "contact", component: ContactComponent },
+  { path: "features", component: FeaturesComponent },
 ];

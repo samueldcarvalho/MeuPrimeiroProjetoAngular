@@ -1,0 +1,22 @@
+<section class="container">
+  <h2>InterpolationBinding</h2>
+  <p>O Número de clicks é {{ contadorClicks }}</p>
+
+  <br />
+
+  <h2>PropertyBinding + EventBinding</h2>
+  <button
+    class="btn-main-action"
+    [disabled]="contadorClicks >= 10"
+    (click)="AdicionarClick()"
+  >
+    Contar
+  </button>
+  <button
+    class="btn-main-action"
+    [disabled]="contadorClicks < 10"
+    (click)="ZerarClicks()"
+  >
+    Zerar Contador
+  </button>
+</section>

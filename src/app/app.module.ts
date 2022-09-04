@@ -9,6 +9,7 @@ import { ContactComponent } from "./pages/contact/contact.component";
 import { AboutComponent } from "./pages/about/about.component";
 import { RouterModule } from "@angular/router";
 import { APP_BASE_HREF } from "@angular/common";
+import { FeaturesComponent } from './pages/features/features.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { APP_BASE_HREF } from "@angular/common";
     AboutComponent,
     HomeComponent,
     ContactComponent,
+    FeaturesComponent,
   ],
   imports: [
     BrowserModule,
