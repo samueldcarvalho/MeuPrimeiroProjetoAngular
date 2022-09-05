@@ -11,6 +11,7 @@ import { RouterModule } from "@angular/router";
 import { APP_BASE_HREF } from "@angular/common";
 import { FeaturesComponent } from "./pages/features/features.component";
 import { FormsModule } from "@angular/forms";
+import { ProductService } from "./products/product.service";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { FormsModule } from "@angular/forms";
     FormsModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: "/" }],
+  providers: [ProductService, { provide: APP_BASE_HREF, useValue: "/" }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
