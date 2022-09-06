@@ -12,4 +12,6 @@ export const rootRouterConfig: Routes = [
   { path: "contact", component: ContactComponent },
   { path: "features", component: FeaturesComponent },
   { path: "products", component: ProductsListComponent },
+  { path: "product/:id", component: ProductsListComponent },
+  { path: "cart/:id", component: ProductsListComponent },
 ];

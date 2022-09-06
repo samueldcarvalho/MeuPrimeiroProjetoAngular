@@ -5,21 +5,21 @@
     <div class="bg-card product-type-option"></div>
   </section>
   <section class="row section-products">
-    <div class="col-md-3 col-6">
-      <div class="bg-card product-card">
-        <span class="product-card-header">
-          <h2>Product's Name</h2>
-        </span>
-        <img
-          src="https://shop.countdown.co.nz/Content/ProductImages/large/205481000000.jpg/Butchery-Lamb-Chops-Marinated-Shoulder.jpg"
-          alt=""
-        />
-        <span class="product-card-price">
-          <button class="btn-main-action success product-price-button">
-            R$23,99
-          </button>
-        </span>
-      </div>
+    <div *ngFor="let product of products" class="col-lg-3 col-md-4 col-6">
+      <a [routerLink]="['/product', product.id]">
+        <div class="bg-card product-card">
+          <span class="product-card-header">
+            <h2>{{ product.title.split(" ").slice(0, 3).join(" ") }}</h2>
+          </span>
+          <img src="{{ product.thumbnail }}" alt="" />
+
+          <a [routerLink]="['/cart', product.id]">
+            <button class="btn-main-action success product-price-button">
+              {{ product.price | currency }}
+            </button>
+          </a>
+        </div>
+      </a>
     </div>
   </section>
 </div>

@@ -12,7 +12,8 @@ import { APP_BASE_HREF } from "@angular/common";
 import { FeaturesComponent } from "./pages/features/features.component";
 import { FormsModule } from "@angular/forms";
 import { ProductService } from "./products/product.service";
-import { ProductsListComponent } from './products/products-list/products-list.component';
+import { ProductsListComponent } from "./products/products-list/products-list.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ProductsListComponent } from './products/products-list/products-list.co
     ProductsListComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
