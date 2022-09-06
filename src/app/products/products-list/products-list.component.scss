@@ -1,5 +1,6 @@
 * {
   color: var(--font-color-darker-01);
+  user-select: none;
 }
 
 section:first-child {
@@ -26,10 +27,11 @@ div.product-card {
   justify-content: space-between;
   align-items: center;
   transition: all 0.2s ease;
+  padding-block: 20px;
 
   img {
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
   }
 
   span.product-card-price {
@@ -39,7 +41,6 @@ div.product-card {
 }
 
 div.product-card:hover {
-  cursor: pointer;
   box-shadow: 0 5px 20px rgba($color: #000000, $alpha: 0.1);
   transform: translateY(-3px);
 }
