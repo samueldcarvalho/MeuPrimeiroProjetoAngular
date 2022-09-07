@@ -1,59 +1,74 @@
 <section class="container">
-  <h2>InterpolationBinding (One-Way)</h2>
-  <p>O Número de clicks é {{ contadorClicks }}</p>
+  <div class="bg-card">
+    <h2>InterpolationBinding (One-Way)</h2>
+    <p>O Número de clicks é {{ contadorClicks }}</p>
 
-  <br />
+    <br />
 
-  <h2>PropertyBinding + EventBinding (One-Way)</h2>
-  <button
-    class="btn-main-action"
-    [disabled]="contadorClicks >= 10"
-    (click)="AdicionarClick()"
-  >
-    Contar
-  </button>
-  <button
-    class="btn-main-action"
-    [disabled]="contadorClicks < 10"
-    (click)="ZerarClicks()"
-  >
-    Zerar Contador
-  </button>
+    <h2>PropertyBinding + EventBinding (One-Way)</h2>
+    <button
+      class="btn-main-action"
+      [disabled]="contadorClicks >= 10"
+      (click)="AdicionarClick()"
+    >
+      Contar
+    </button>
+    <button
+      class="btn-main-action"
+      [disabled]="contadorClicks < 10"
+      (click)="ZerarClicks()"
+    >
+      Zerar Contador
+    </button>
 
-  <br />
-  <br />
+    <br />
+    <br />
 
-  <h2>Fake TwoWayBinding</h2>
-  <input
-    class="input-text-field"
-    type="text"
-    (keyup)="AlterarNome($event)"
-    placeholder="Digite seu nome"
-  />
-  <p>Seu nome é: {{ nome }}</p>
+    <h2>Fake TwoWayBinding</h2>
+    <input
+      class="input-text"
+      type="text"
+      (keyup)="AlterarNome($event)"
+      placeholder="Digite seu nome"
+    />
+    <p>Seu nome é: {{ nome }}</p>
 
-  <br />
-  <br />
+    <br />
+    <br />
 
-  <h2>TwoWayBinding</h2>
-  <input
-    class="input-text-field"
-    type="text"
-    [ngModel]="nome"
-    (ngModelChange)="nome = $event"
-    placeholder="Digite seu nome"
-  />
-  <p>Seu nome é: {{ nome }}</p>
+    <h2>TwoWayBinding</h2>
+    <input
+      class="input-text"
+      type="text"
+      [ngModel]="nome"
+      (ngModelChange)="nome = $event"
+      placeholder="Digite seu nome"
+    />
+    <p>Seu nome é: {{ nome }}</p>
 
-  <br />
-  <br />
+    <br />
+    <br />
 
-  <h2>Official - TwoWayBinding</h2>
-  <input
-    class="input-text-field"
-    type="text"
-    [(ngModel)]="nome"
-    placeholder="Digite seu nome"
-  />
-  <p>Seu nome é: {{ nome }}</p>
+    <h2>Official - TwoWayBinding</h2>
+    <input
+      class="input-text"
+      type="text"
+      [(ngModel)]="nome"
+      placeholder="Digite seu nome"
+    />
+    <p>Seu nome é: {{ nome }}</p>
+  </div>
+</section>
+<section class="container">
+  <div class="bg-card">
+    <form>
+      <h2>Reactive-Form</h2>
+      <div class="form-gorup">
+        <label class="form-label">
+          <p>Nome completo</p>
+          <input type="text" class="input-text" />
+        </label>
+      </div>
+    </form>
+  </div>
 </section>
