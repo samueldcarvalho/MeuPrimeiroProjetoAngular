@@ -18,6 +18,7 @@ export class FeaturesComponent implements OnInit {
   public contadorClicks: number = 0;
   public nome: string = "";
   public cadastroForm!: FormGroup;
+  public formResult: string = "";
 
   AdicionarClick() {
     this.contadorClicks++;
@@ -33,14 +34,25 @@ export class FeaturesComponent implements OnInit {
 
   ngOnInit(): void {
     this.cadastroForm = this.fb.group({
-      email: ["", Validators.required],
+      email: ["", [Validators.required, Validators.email]],
       nome_completo: ["", Validators.required],
-      repetir_senha: ["", Validators.required],
+      repetir_senha: [""],
       senha: [""],
     });
   }
 
   cadastrarUsuario() {
-    console.log(this.cadastroForm.value);
+    if (this.cadastroForm.dirty && this.cadastroForm.valid) {
+      console.log(this.cadastroForm.value);
+      this.formResult = JSON.stringify(this.cadastroForm.value);
+    }
+  }
+
+  retornarErrosFormControl(fieldName: string): boolean {
+    return (
+      this.cadastroForm.get(fieldName)!.errors != null &&
+      (this.cadastroForm.get(fieldName)!.touched ||
+        this.cadastroForm.get(fieldName)!.dirty)
+    );
   }
 }

@@ -10,19 +10,12 @@
             class="input-text"
             formControlName="nome_completo"
             [ngClass]="{
-              'input-text-danger':
-                cadastroForm.get('nome_completo')!.errors &&
-                (cadastroForm.get('nome_completo')!.dirty ||
-                  cadastroForm.get('nome_completo')!.touched)
+              'input-text-danger': retornarErrosFormControl('nome_completo')
             }"
           />
           <span
             class="text-danger"
-            *ngIf="
-              cadastroForm.get('nome_completo')!.errors &&
-              (cadastroForm.get('nome_completo')!.dirty ||
-                cadastroForm.get('nome_completo')!.touched)
-            "
+            *ngIf="retornarErrosFormControl('nome_completo')"
           >
             <p>Campo obrigatório</p>
           </span>
@@ -31,7 +24,29 @@
       <div class="form-gorup">
         <label class="form-label">
           <p>E-mail</p>
-          <input type="text" class="input-text" formControlName="email" />
+          <input
+            type="text"
+            class="input-text"
+            formControlName="email"
+            [ngClass]="{
+              'input-text-danger': retornarErrosFormControl('email')
+            }"
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              cadastroForm.get('email')?.errors?.required &&
+              retornarErrosFormControl('email')
+            "
+          >
+            <p>Campo obrigatório</p>
+          </span>
+          <span
+            class="text-danger"
+            *ngIf="(cadastroForm.get('email')?.errors)!['email']"
+          >
+            <p>E-mail inválido</p>
+          </span>
         </label>
       </div>
       <div class="form-gorup">
@@ -51,7 +66,13 @@
         </label>
       </div>
       <span class="form-footer">
-        <button type="submit" class="btn-main-action">Cadastrar</button>
+        <button
+          type="submit"
+          [disabled]="!cadastroForm.valid"
+          class="btn-main-action"
+        >
+          Cadastrar
+        </button>
       </span>
     </form>
 
@@ -59,6 +80,10 @@
       <p>Situação Form: Valido: {{ cadastroForm.valid }}</p>
       <p>Situação Form: Valido: {{ cadastroForm.touched }}</p>
       <p>Situação Form: Valido: {{ cadastroForm.dirty }}</p>
+      <p>
+        Objeto submitado: <br />
+        {{ formResult }}
+      </p>
     </div>
   </div>
 </section>
