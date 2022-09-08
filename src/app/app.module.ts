@@ -10,7 +10,7 @@ import { AboutComponent } from "./pages/about/about.component";
 import { RouterModule } from "@angular/router";
 import { APP_BASE_HREF } from "@angular/common";
 import { FeaturesComponent } from "./pages/features/features.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ProductService } from "./products/product.service";
 import { ProductsListComponent } from "./products/products-list/products-list.component";
 import { HttpClientModule } from "@angular/common/http";
@@ -26,6 +26,7 @@ import { HttpClientModule } from "@angular/common/http";
     ProductsListComponent,
   ],
   imports: [
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserModule,
     FormsModule,

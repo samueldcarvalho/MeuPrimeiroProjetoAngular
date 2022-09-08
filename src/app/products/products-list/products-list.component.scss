@@ -19,7 +19,9 @@ section.section-product-types {
 
 section.section-products {
   div.product-card {
-    overflow: hidden;
+    overflow: hidden;       
+
+    
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;

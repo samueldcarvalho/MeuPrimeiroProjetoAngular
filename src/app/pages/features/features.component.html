@@ -1,5 +1,48 @@
 <section class="container">
   <div class="bg-card">
+    <form (ngSubmit)="cadastrarUsuario()" [formGroup]="cadastroForm">
+      <h2>Reactive-Form</h2>
+      <div class="form-gorup">
+        <label class="form-label">
+          <p>Nome completo</p>
+          <input
+            type="text"
+            class="input-text"
+            formControlName="nome_completo"
+          />
+        </label>
+      </div>
+      <div class="form-gorup">
+        <label class="form-label">
+          <p>E-mail</p>
+          <input type="text" class="input-text" formControlName="email" />
+        </label>
+      </div>
+      <div class="form-gorup">
+        <label class="form-label">
+          <p>Senha</p>
+          <input type="password" class="input-text" formControlName="senha" />
+        </label>
+      </div>
+      <div class="form-gorup">
+        <label class="form-label">
+          <p>Confirme a senha</p>
+          <input
+            type="password"
+            class="input-text"
+            formControlName="repetir_senha"
+          />
+        </label>
+      </div>
+      <span class="form-footer">
+        <button type="submit" class="btn-main-action">Cadastrar</button>
+      </span>
+    </form>
+  </div>
+</section>
+
+<section class="container">
+  <div class="bg-card">
     <h2>InterpolationBinding (One-Way)</h2>
     <p>O Número de clicks é {{ contadorClicks }}</p>
 
@@ -57,18 +100,5 @@
       placeholder="Digite seu nome"
     />
     <p>Seu nome é: {{ nome }}</p>
-  </div>
-</section>
-<section class="container">
-  <div class="bg-card">
-    <form>
-      <h2>Reactive-Form</h2>
-      <div class="form-gorup">
-        <label class="form-label">
-          <p>Nome completo</p>
-          <input type="text" class="input-text" />
-        </label>
-      </div>
-    </form>
   </div>
 </section>
