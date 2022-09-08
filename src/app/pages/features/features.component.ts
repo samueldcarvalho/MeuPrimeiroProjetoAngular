@@ -1,6 +1,11 @@
 import { CadastrarUsuarioInputModel } from "./models/cadastrar-usuario.inputmodel";
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormControl, FormGroup } from "@angular/forms";
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from "@angular/forms";
 
 @Component({
   selector: "app-features",
@@ -27,15 +32,15 @@ export class FeaturesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cadastroForm = this.fb.group<CadastrarUsuarioInputModel>({
-      email: "",
-      nome_completo: "",
-      repetir_senha: "",
-      senha: "",
+    this.cadastroForm = this.fb.group({
+      email: ["", Validators.required],
+      nome_completo: ["", Validators.required],
+      repetir_senha: ["", Validators.required],
+      senha: [""],
     });
   }
 
   cadastrarUsuario() {
-    
+    console.log(this.cadastroForm.value);
   }
 }

@@ -20,6 +20,10 @@
   --color-success-light: #41e870;
   --color-success-darker: #2a9749;
 
+  --color-danger-main: #ee083a;
+  --color-danger-light: #ff2f5c;
+  --color-danger-darker: #ca163d;
+
   --font-color-darker-01: #534363;
   --font-color-darker-02: rgb(95, 77, 109);
 
@@ -112,4 +116,26 @@ button.btn-main-action:disabled {
   background-color: var(--bg-02);
   box-shadow: 0 5px 15px rgba($color: #000000, $alpha: 0.1);
   border-radius: 4px;
+}
+
+.text-danger {
+  p {
+    animation: TextDangerSpan 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    color: var(--color-danger-main);
+    font-size: small;
+    font-weight: 500;
+  }
+}
+
+.input-text-danger {
+  box-shadow: 0 0 1px 2px rgba($color: #ff0037, $alpha: 0.3);
+}
+
+@keyframes TextDangerSpan {
+  from {
+    padding-top: 0;
+  }
+  to {
+    padding-top: 5px;
+  }
 }

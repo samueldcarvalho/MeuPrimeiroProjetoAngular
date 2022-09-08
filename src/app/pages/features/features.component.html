@@ -9,7 +9,23 @@
             type="text"
             class="input-text"
             formControlName="nome_completo"
+            [ngClass]="{
+              'input-text-danger':
+                cadastroForm.get('nome_completo')!.errors &&
+                (cadastroForm.get('nome_completo')!.dirty ||
+                  cadastroForm.get('nome_completo')!.touched)
+            }"
           />
+          <span
+            class="text-danger"
+            *ngIf="
+              cadastroForm.get('nome_completo')!.errors &&
+              (cadastroForm.get('nome_completo')!.dirty ||
+                cadastroForm.get('nome_completo')!.touched)
+            "
+          >
+            <p>Campo obrigatório</p>
+          </span>
         </label>
       </div>
       <div class="form-gorup">
@@ -38,6 +54,12 @@
         <button type="submit" class="btn-main-action">Cadastrar</button>
       </span>
     </form>
+
+    <div>
+      <p>Situação Form: Valido: {{ cadastroForm.valid }}</p>
+      <p>Situação Form: Valido: {{ cadastroForm.touched }}</p>
+      <p>Situação Form: Valido: {{ cadastroForm.dirty }}</p>
+    </div>
   </div>
 </section>
 
