@@ -1,3 +1,4 @@
+import { CadastrarUsuarioInputModel } from "./models/cadastrar-usuario.inputmodel";
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup } from "@angular/forms";
 
@@ -7,9 +8,6 @@ import { FormBuilder, FormControl, FormGroup } from "@angular/forms";
   styleUrls: ["./features.component.scss"],
 })
 export class FeaturesComponent implements OnInit {
-  /**
-   *
-   */
   constructor(private fb: FormBuilder) {}
 
   public contadorClicks: number = 0;
@@ -29,16 +27,15 @@ export class FeaturesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cadastroForm = this.fb.group({
-      nome_completo: [""],
-      email: [""],
-      senha: [""],
-      repetir_senha: [""],
+    this.cadastroForm = this.fb.group<CadastrarUsuarioInputModel>({
+      email: "",
+      nome_completo: "",
+      repetir_senha: "",
+      senha: "",
     });
   }
 
   cadastrarUsuario() {
-    let x = this.cadastroForm.value;
-    console.log(x);
+    
   }
 }

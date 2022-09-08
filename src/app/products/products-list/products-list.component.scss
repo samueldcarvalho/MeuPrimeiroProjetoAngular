@@ -19,14 +19,13 @@ section.section-product-types {
 
 section.section-products {
   div.product-card {
-    overflow: hidden;       
+    overflow: hidden;
 
-    
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
-    transition: all 0.2s ease;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     padding-block: 20px;
     margin-bottom: 25px;
 
