@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
+import { FormBuilder, FormControl, FormGroup } from "@angular/forms";
 
 @Component({
   selector: "app-features",
@@ -7,6 +7,11 @@ import { FormControl, FormGroup } from "@angular/forms";
   styleUrls: ["./features.component.scss"],
 })
 export class FeaturesComponent implements OnInit {
+  /**
+   *
+   */
+  constructor(private fb: FormBuilder) {}
+
   public contadorClicks: number = 0;
   public nome: string = "";
   public cadastroForm!: FormGroup;
@@ -24,11 +29,11 @@ export class FeaturesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cadastroForm = new FormGroup({
-      nome_completo: new FormControl(""),
-      email: new FormControl(""),
-      senha: new FormControl(""),
-      repetir_senha: new FormControl(""),
+    this.cadastroForm = this.fb.group({
+      nome_completo: [""],
+      email: [""],
+      senha: [""],
+      repetir_senha: [""],
     });
   }
 
