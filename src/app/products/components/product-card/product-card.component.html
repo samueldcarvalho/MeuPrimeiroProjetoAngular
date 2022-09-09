@@ -1,0 +1,21 @@
+<a [routerLink]="['/product', product.id]">
+  <div class="bg-card product-card">
+    <span class="product-card-header">
+      <h2>{{ product.title.split(" ").slice(0, 3).join(" ") }}</h2>
+    </span>
+    <img src="{{ product.thumbnail }}" alt="" />
+
+    <div [ngSwitch]="product.stock <= 0">
+      <a *ngSwitchCase="false" [routerLink]="['/cart', product.id]">
+        <button class="btn-main-action success product-price-button">
+          {{ product.price | currency }}
+        </button>
+      </a>
+      <a *ngSwitchCase="true" [routerLink]="['/remind', product.id]">
+        <button class="btn-main-action product-price-button">
+          Out of Stock
+        </button>
+      </a>
+    </div>
+  </div>
+</a>
