@@ -1,7 +1,7 @@
 <section class="container">
   <div class="bg-card">
     <form (ngSubmit)="cadastrarUsuario()" [formGroup]="cadastroForm">
-      <h2>Reactive-Form</h2>
+      <h2>Reactive-Form (basic validation)</h2>
       <div class="form-gorup">
         <label class="form-label">
           <p>Nome completo</p>
@@ -35,7 +35,7 @@
           <span
             class="text-danger"
             *ngIf="
-              cadastroForm.get('email')?.errors?.required &&
+              (cadastroForm.get('email')?.errors)?.['required'] &&
               retornarErrosFormControl('email')
             "
           >
@@ -43,28 +43,13 @@
           </span>
           <span
             class="text-danger"
-            *ngIf="(cadastroForm.get('email')?.errors)!['email']"
+            *ngIf="(cadastroForm.get('email')?.errors)?.['email']"
           >
             <p>E-mail inválido</p>
           </span>
         </label>
       </div>
-      <div class="form-gorup">
-        <label class="form-label">
-          <p>Senha</p>
-          <input type="password" class="input-text" formControlName="senha" />
-        </label>
-      </div>
-      <div class="form-gorup">
-        <label class="form-label">
-          <p>Confirme a senha</p>
-          <input
-            type="password"
-            class="input-text"
-            formControlName="repetir_senha"
-          />
-        </label>
-      </div>
+
       <span class="form-footer">
         <button
           type="submit"

@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ProductService } from "./products/product.service";
 import { ProductsListComponent } from "./products/products-list/products-list.component";
 import { HttpClientModule } from "@angular/common/http";
+import { CustomFormsModule } from "ng2-validation";
 
 @NgModule({
   declarations: [
