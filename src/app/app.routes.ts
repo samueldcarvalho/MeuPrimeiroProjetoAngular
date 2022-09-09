@@ -1,9 +1,10 @@
 import { FeaturesComponent } from "./pages/features/features.component";
 import { HomeComponent } from "./pages/home/home.component";
-import { Routes } from "@angular/router";
+import { RouterModule, Routes } from "@angular/router";
 import { AboutComponent } from "./pages/about/about.component";
 import { ContactComponent } from "./pages/contact/contact.component";
 import { ProductsListComponent } from "./products/products-list/products-list.component";
+import { NgModule } from "@angular/core";
 
 export const rootRouterConfig: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -15,3 +16,9 @@ export const rootRouterConfig: Routes = [
   { path: "product/:id", component: ProductsListComponent },
   { path: "cart/:id", component: ProductsListComponent },
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(rootRouterConfig)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}

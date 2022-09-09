@@ -1,4 +1,5 @@
-import { rootRouterConfig } from "./app.routes";
+import { LayoutModule } from "./layouts/layout.module";
+import { AppRoutingModule, rootRouterConfig } from "./app.routes";
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
@@ -15,23 +16,25 @@ import { ProductService } from "./products/product.service";
 import { ProductsListComponent } from "./products/products-list/products-list.component";
 import { HttpClientModule } from "@angular/common/http";
 import { CustomFormsModule } from "ng2-validation";
+import { ProductDashboardComponent } from './products/product-dashboard/product-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     AboutComponent,
     HomeComponent,
     ContactComponent,
     FeaturesComponent,
     ProductsListComponent,
+    ProductDashboardComponent,
   ],
   imports: [
+    LayoutModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(rootRouterConfig, { useHash: false }),
+    AppRoutingModule,
   ],
   providers: [ProductService, { provide: APP_BASE_HREF, useValue: "/" }],
   bootstrap: [AppComponent],
