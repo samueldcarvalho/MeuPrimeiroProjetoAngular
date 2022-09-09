@@ -12,9 +12,14 @@ export const rootRouterConfig: Routes = [
   { path: "about", component: AboutComponent },
   { path: "contact", component: ContactComponent },
   { path: "features", component: FeaturesComponent },
-  { path: "products", component: ProductsListComponent },
-  { path: "product/:id", component: ProductsListComponent },
+  { path: "products-dashboard", component: ProductsListComponent },
+  { path: "product-dashboard/:id", component: ProductsListComponent },
   { path: "cart/:id", component: ProductsListComponent },
+  {
+    path: "products",
+    loadChildren: () =>
+      import("./products/products.module").then((m) => m.ProductsModule),
+  },
 ];
 
 @NgModule({
