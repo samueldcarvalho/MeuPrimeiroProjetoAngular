@@ -6,13 +6,14 @@
     <img src="{{ product.thumbnail }}" alt="" />
 
     <div [ngSwitch]="product.stock <= 0">
-      <a *ngSwitchCase="false" [routerLink]="['/cart', product.id]">
+      <a *ngSwitchCase="false">
         <button class="btn-main-action success product-price-button">
           {{ product.price | currency }}
         </button>
       </a>
-      <a *ngSwitchCase="true" [routerLink]="['/remind', product.id]">
+      <a *ngSwitchCase="true">
         <button class="btn-main-action product-price-button">
+          
           Out of Stock
         </button>
       </a>
