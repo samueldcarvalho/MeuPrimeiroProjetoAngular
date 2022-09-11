@@ -1,4 +1,4 @@
-<a [routerLink]="['/product', product.id]">
+<a>
   <div class="bg-card product-card">
     <span class="product-card-header">
       <h2>{{ product.title.split(" ").slice(0, 3).join(" ") }}</h2>
@@ -7,13 +7,12 @@
 
     <div [ngSwitch]="product.stock <= 0">
       <a *ngSwitchCase="false">
-        <button class="btn-main-action success product-price-button">
+        <button class="btn-main-action success product-price-button" (click)="emitirEvento()">
           {{ product.price | currency }}
         </button>
       </a>
       <a *ngSwitchCase="true">
         <button class="btn-main-action product-price-button">
-          
           Out of Stock
         </button>
       </a>

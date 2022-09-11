@@ -12,6 +12,10 @@ export class ProductsListComponent implements OnInit {
 
   public products: Array<Product> = new Array<Product>();
 
+  mudarStatus(event: Product) {
+    event.stock = 0;
+  }
+
   ngOnInit(): void {
     this.productService.GetProducts().subscribe({
       next: (products) => {

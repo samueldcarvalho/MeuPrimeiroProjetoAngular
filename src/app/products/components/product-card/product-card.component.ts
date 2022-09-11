@@ -1,5 +1,5 @@
 import { Product } from "./../../product";
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
 @Component({
   selector: "app-product-card",
@@ -9,7 +9,15 @@ import { Component, Input, OnInit } from "@angular/core";
 export class ProductCardComponent implements OnInit {
   @Input()
   product!: Product;
+
+  @Output()
+  status: EventEmitter<any> = new EventEmitter<any>();
+
   constructor() {}
+
+  emitirEvento() {
+    this.status.emit(this.product);
+  }
 
   ngOnInit(): void {}
 }
