@@ -7,7 +7,10 @@
 
     <div [ngSwitch]="product.stock <= 0">
       <a *ngSwitchCase="false">
-        <button class="btn-main-action success product-price-button" (click)="emitirEvento()">
+        <button
+          class="btn-main-action success product-price-button"
+          (click)="emitirEvento()"
+        >
           {{ product.price | currency }}
         </button>
       </a>
@@ -15,6 +18,7 @@
         <button class="btn-main-action product-price-button">
           Out of Stock
         </button>
+        <ng-content style="color: black" )></ng-content>
       </a>
     </div>
   </div>

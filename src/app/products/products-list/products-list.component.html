@@ -2,10 +2,9 @@
   <app-product-count [products]="products"></app-product-count>
   <section class="row section-products">
     <div *ngFor="let product of products" class="col-lg-3 col-md-4 col-6">
-      <app-product-card
-        [product]="product"
-        (status)="mudarStatus($event)"
-      ></app-product-card>
+      <app-product-card [product]="product" (status)="mudarStatus($event)">
+        <h4 style="text-align: center">Get in the map!</h4>
+      </app-product-card>
     </div>
   </section>
 </div>
